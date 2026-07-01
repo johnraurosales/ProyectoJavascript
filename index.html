@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación del Clima</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <div id="contenedor-principal">
+
+        <header id="cabecera">
+            <img src="assets/images/logo.svg" alt="Logo" id="logo-app">
+
+            <div id="controles-cabecera">
+                <select id="selector-unidades">
+                    <option value="metrico">Métrico (°C, km/h)</option>
+                    <option value="imperial">Imperial (°F, mph)</option>
+                </select>
+            </div>
+        </header>
+
+        <section id="zona-busqueda">
+            <h1 id="titulo-principal">¿Cómo se ve el cielo hoy?</h1>
+
+            <div id="caja-buscador">
+                <img src="assets/images/icon-search.svg" alt="Buscar" id="icono-lupa">
+                <input type="text" id="entrada-ciudad" placeholder="Busca una ciudad">
+                <button id="boton-buscar">Buscar</button>
+            </div>
+        </section>
+
+        <main id="contenido-clima">
+
+            <div id="columna-izquierda">
+
+                <section id="clima-hoy">
+                    <h2 id="nombre-ciudad">---</h2>
+                    <div id="temperatura-principal">
+                        <img id="icono-clima-actual" src="assets/images/icon-sunny.webp" alt="Clima">
+                        <span id="grados-actuales">--°C</span>
+                    </div>
+                </section>
+
+                <section id="detalles-extra">
+                    <div class="dato-extra">
+                        <p>Sensación</p>
+                        <strong id="sensacion">--°C</strong>
+                    </div>
+                    <div class="dato-extra">
+                        <p>Humedad</p>
+                        <strong id="humedad">--%</strong>
+                    </div>
+                    <div class="dato-extra">
+                        <p>Viento</p>
+                        <strong id="viento">-- km/h</strong>
+                    </div>
+                    <div class="dato-extra">
+                        <p>Precipitación</p>
+                        <strong id="precipitacion">-- mm</strong>
+                    </div>
+                </section>
+
+                <section id="pronostico-semana">
+                    <h3>Pronóstico de 7 días</h3>
+                    <div id="lista-dias">
+                    </div>
+                </section>
+
+            </div>
+            <div id="columna-derecha">
+
+                <section id="pronostico-horas">
+                    <h3>Pronóstico por hora</h3>
+                    <div id="carrusel-horas"></div>
+                </section>
+
+            </div>
+
+            <div id="contenedor-error" style="display: none; text-align: center; padding: 50px;">
+                <h3>Oops, algo salió mal</h3>
+                <p id="mensaje-error">No pudimos encontrar la ciudad que buscas.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <script type="module" src="scripts/app.js"></script>
+</body>
+</html>
